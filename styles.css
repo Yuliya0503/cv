@@ -1,0 +1,1122 @@
+@charset "UTF-8";
+/* reset styles */
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul,
+ol {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+pre,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    padding: 40px 20px;
+    font-family: "Raleway", sans-serif;
+    /* background-color: #e5e5dc; */
+  }
+  
+  /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+  ul[class],
+  ol[class] {
+    list-style: none;
+  }
+  
+  /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Упрощаем работу с изображениями */
+  img {
+    display: block;
+  }
+  
+  /* Указываем понятную периодичность в потоке данных у article*/
+  article > * + * {
+    margin-top: 1em;
+  }
+  
+  /* Наследуем шрифты для инпутов и кнопок */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  .container {
+    width: 420px;
+    margin: 0 auto;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    border-radius: 20px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .container {
+      width: 768px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .container {
+      width: 1024px;
+    }
+  }
+  
+  @media screen and (min-width: 1920px) {
+    .container {
+      width: 1200px;
+    }
+  }
+  
+  .section-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  
+  .icon {
+    fill: #66c0d4;
+    margin-right: 30px;
+  }
+  
+  .hidden-title {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+  }
+  
+  .main {
+    position: relative;
+  }
+  
+  .header {
+    position: relative;
+    background-color:#66c0d4;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .header {
+      height: 80px;
+      border-bottom: 2px solid #ffffff;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .nav_container {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 629px;
+      background-color: #66c0d4;
+      padding: 48px 40px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 20px 20px 0 0;
+    }
+    .nav_container.is-open {
+      display: block;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .nav_container {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      width: 420px;
+      height: 629px;
+      background-color: #66c0d4;
+      padding-top: 80px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      border-radius: 0 20px 0 0;
+    }
+    .nav_container.is-open {
+      display: block;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .nav_list {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .nav_list {
+      text-align: center;
+    }
+  }
+  
+  .nav_item {
+    margin-top: 28px;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .nav_item {
+      margin: 45px auto;
+      text-align: center;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .nav_item {
+      margin: 25px 0 35px 0;
+    }
+  }
+  
+  .nav_link {
+    color: #ffffff;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  .nav_link:hover,
+  .nav_link:focus {
+    color: #000000;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .nav__button {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    z-index: 2;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    fill: #000000;
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .nav__button .close__mob {
+    display: none;
+  }
+  
+  .nav__button.is-open .close__mob {
+    display: block;
+    fill: #ffffff;
+  }
+  
+  .nav__button.is-open .menu__mob {
+    display: none;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .nav__button {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .about-me_container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .about-me_container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  
+  .hero {
+    background-color: #373a36;
+  }
+  
+  .hero_photo {
+    border-radius: 20px 20px 0 0;
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .hero_photo {
+      border-radius: 0 20px 0 0;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .hero_photo {
+      border-radius: 0;
+      clip-path: polygon(0 0, 100% 0%, 100% 86%, 0 100%);
+    }
+  }
+  
+  .about-me {
+    text-align: center;
+    color: #ffffff;
+    background-color: #373a36;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .about-me {
+      border-radius: 20px 0 0 0;
+      background-color: #e6e2dd;
+      color: #000000;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .about-me {
+      border-radius: 0;
+      clip-path: polygon(0 0, 100% 0%, 100% 63%, 0 86%);
+    }
+  }
+  
+  .about-me_name {
+    padding-top: 30px;
+    margin-bottom: 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    letter-spacing: 3px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .about-me_name {
+      padding-top: 50px;
+      margin-bottom: 50px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .about-me_name {
+      margin-bottom: 30px;
+      padding-top: 50px;
+      font-family: "Poppins", sans-serif;
+      font-size: 60px;
+      font-weight: 500;
+      letter-spacing: 6px;
+    }
+  }
+  
+  @media screen and (min-width: 1920px) {
+    .about-me_name {
+      margin-bottom: 60px;
+    }
+  }
+  
+  .about-me_profession {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .about-me_profession {
+      margin-bottom: 0;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .about-me_profession {
+      font-family: "Poppins", sans-serif;
+      font-size: 35px;
+      font-weight: 500;
+      letter-spacing: 3px;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .about-me_description {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .about-me_description {
+      margin-top: 250px;
+      margin-left: 25px;
+      margin-right: 25px;
+      text-align: justify;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .about-me_description {
+      margin-top: 30px;
+      margin-left: 75px;
+      margin-right: 75px;
+    }
+  }
+  
+  @media screen and (min-width: 1920px) {
+    .about-me_description {
+      margin-top: 80px;
+      margin-left: 75px;
+      margin-right: 75px;
+      font-size: 20px;
+    }
+  }
+  
+  .contacts_tech-skills_container {
+    width: 420px;
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .contacts_tech-skills_container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 768px;
+    }
+  }
+  
+  .contacts {
+    background-color: #373a36;
+    color: #ffffff;
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .contacts {
+      width: 348px;
+    }
+  }
+  
+  .contacts_title {
+    padding-top: 50px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    font-size: 15px;
+    border-bottom: 1px solid #66c0d4;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .contacts_title {
+      font-family: "Poppins", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+  }
+  
+  .contacts_item {
+    margin-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .contacts_item {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+  
+  .contacts_link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .contacts_link:hover,
+  .contacts_link:focus {
+    color: #66c0d4;
+  }
+  
+  .education_link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-decoration: none;
+    color:  #000000;
+  }
+
+  .education_link:hover,
+  .education_link:focus {
+    color: #66c0d4;
+  }
+
+  .tech-skills {
+    background-color: #373a36;
+    color: #ffffff;
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .tech-skills {
+      width: 420px;
+    }
+  }
+  
+  .tech-skills_title {
+    padding-top: 50px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    font-size: 15px;
+    border-bottom: 1px solid #66c0d4;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .tech-skills_title {
+      font-family: "Poppins", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .tech-skills_list {
+      padding: 0 0 30px 0;
+    }
+  }
+  
+  .tech-skills_item {
+    margin-left: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 15px;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .tech-skills_item {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+  
+  .tech-skills_item::before {
+    content: "\2BC8";
+    font-size: 20px;
+  }
+  
+  .tech-skill_name {
+    margin-left: 30px;
+  }
+  
+  .hljs {
+    width: 420px;
+    display: block;
+    overflow-x: auto;
+    padding: 0 10px 0 10px;
+    background: #373a36;
+    color: white;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .hljs {
+      width: 768px;
+      padding-left: 40px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .hljs {
+      width: 604px;
+      background: #ffffff;
+      color: black;
+    }
+  }
+  
+  @media screen and (min-width: 1920px) {
+    .hljs {
+      width: 780px;
+    }
+  }
+  
+  .hljs-name,
+  .hljs-strong {
+    font-weight: bold;
+  }
+  
+  .hljs-code,
+  .hljs-emphasis {
+    font-style: italic;
+  }
+  
+  .hljs-tag {
+    color: #62c8f3;
+  }
+  
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-selector-id,
+  .hljs-selector-class {
+    color: #ade5fc;
+  }
+  
+  .hljs-string,
+  .hljs-bullet {
+    color: #a2fca2;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .hljs-string,
+    .hljs-bullet {
+      color: #25c6c6;
+    }
+  }
+  
+  .hljs-type,
+  .hljs-title,
+  .hljs-section,
+  .hljs-attribute,
+  .hljs-quote,
+  .hljs-built_in,
+  .hljs-builtin-name {
+    color: #ffa;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .hljs-type,
+    .hljs-title,
+    .hljs-section,
+    .hljs-attribute,
+    .hljs-quote,
+    .hljs-built_in,
+    .hljs-builtin-name {
+      color: #4286f4;
+      font-weight: bold;
+    }
+  }
+  
+  .hljs-number,
+  .hljs-symbol,
+  .hljs-bullet {
+    color: #d36363;
+  }
+  
+  .hljs-keyword,
+  .hljs-selector-tag,
+  .hljs-literal {
+    color: #fcc28c;
+    font-weight: bold;
+  }
+  
+  .hljs-comment,
+  .hljs-deletion,
+  .hljs-code {
+    color: #888;
+  }
+  
+  .hljs-regexp,
+  .hljs-link {
+    color: #c6b4f0;
+  }
+  
+  .hljs-meta {
+    color: #fc9b9b;
+  }
+  
+  .hljs-deletion {
+    background-color: #fc9b9b;
+    color: #333;
+  }
+  
+  .hljs-addition {
+    background-color: #a2fca2;
+    color: #333;
+  }
+  
+  .hljs a {
+    color: inherit;
+  }
+  
+  .hljs a:focus,
+  .hljs a:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+  
+  pre {
+    height: 456px;
+  }
+  
+  .code-container {
+    width: 420px;
+    background-color: #373a36;
+    color: #ffffff;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .code-container {
+      width: 768px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .code-container {
+      position: absolute;
+      top: 980px;
+      left: 420px;
+      width: 604px;
+      background-color: white;
+      color: #000000;
+    }
+  }
+  
+  @media screen and (min-width: 1920px) {
+    .code-container {
+      position: absolute;
+      top: 980px;
+      left: 420px;
+      width: 780px;
+    }
+  }
+  
+  .code {
+    margin-top: -30px;
+  }
+  
+  .code-title {
+    padding-top: 40px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    font-size: 15px;
+    border-bottom: 1px solid #66c0d4;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .code-title {
+      font-family: "Poppins", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+  }
+  
+  .projects {
+    width: 420px;
+    background-color: #373a36;
+    color: #ffffff;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .projects {
+      width: 768px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .projects {
+      margin-top: -88px;
+      position: absolute;
+      top: 629px;
+      left: 420px;
+      width: 604px;
+      background-color: white;
+      color: #000000;
+    }
+  }
+  
+  @media screen and (min-width: 1920px) {
+    .projects {
+      position: absolute;
+      top: 630px;
+      left: 420px;
+      width: 780px;
+    }
+  }
+  
+  .projects_title {
+    padding-top: 30px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    font-size: 15px;
+    border-bottom: 1px solid #66c0d4;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .projects_title {
+      font-family: "Poppins", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+  }
+  
+  .projects_item {
+    margin-left: 45px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+  }
+  
+  .projects_item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  
+  .projects_info {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  
+  .projects_link {
+    color: #66c0d4;
+  }
+  
+  .projects_link:hover,
+  .projects_link:focus {
+    color: #e6e2dd;
+  }
+  
+  .languages_education_container {
+    background-color: #e6e2dd;
+  }
+  
+  @media screen and (min-width: 420px) {
+    .languages_education_container {
+      width: 420px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .languages_education_container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 768px;
+    }
+  }
+  
+  .education {
+    background-color: #e6e2dd;
+    color: #000000;
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .education {
+      width: 348px;
+    }
+  }
+  
+  .education_title {
+    padding-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    font-size: 15px;
+    border-bottom: 1px solid #66c0d4;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .education_title {
+      font-family: "Poppins", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+  }
+  
+  .education_item {
+    margin: 0px 0px 15px 40px;
+    font-size: 15px;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .education_item {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+  
+  .education_item::before {
+    content: "\1F393";
+  }
+  
+  .education_name {
+    text-transform: uppercase;
+    margin-left: 15px;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .education_list {
+      padding: 0 0 30px 0;
+    }
+  }
+  
+  .education_period,
+  .education_info {
+    margin-left: 40px;
+    text-align: left;
+  }
+  
+  .languages {
+    background-color: #e6e2dd;
+    color: #000000;
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .languages {
+      width: 420px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .languages {
+      position: absolute;
+      top: 1505px;
+      left: 420px;
+      width: 604px;
+      background-color: white;
+    }
+  }
+  
+  @media screen and (min-width: 1920px) {
+    .languages {
+      position: absolute;
+      top: 1505px;
+      left: 420px;
+      width: 780px;
+    }
+  }
+  
+  .languages_title {
+    padding-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    font-size: 15px;
+    border-bottom: 1px solid #66c0d4;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .languages_title {
+      font-family: "Poppins", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+  }
+  
+  .lang_cert_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .lang_cert_container {
+      flex-direction: column;
+      width: 420px;
+    }
+  }
+  
+  .languages_item {
+    margin: 0px 0px 13px 40px;
+    font-size: 15px;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .languages_item {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+  
+  .language_info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-transform: uppercase;
+  }
+  
+  .languages_level1,
+  .languages_level2,
+  .languages_level3,
+  .languages_level4 {
+    text-transform: lowercase;
+  }
+  
+  .languages_level1,
+  .languages_level3,
+  .languages_level4 {
+    margin-left: 35px;
+  }
+  
+  .languages_level2 {
+    margin-left: 17px;
+  }
+  
+  .english-level_certificate {
+    margin-left: 26px;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .english-level_certificate {
+      margin-top: -7px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .english-level_certificate {
+      margin-top: 15px;
+      margin-left: 90px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .english-level_certificate {
+      margin-top: 5px;
+      margin-left: 80px;
+    }
+  }
+  
+  .footer {
+    position: relative;
+    background-color: #66c0d4;
+    border-radius: 0 0 20px 20px;
+    height: 93px;
+  }
+  
+  .footer_list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer_item {
+    margin: 25px 25px 0 25px;
+  }
+  
+  .footer_year {
+    margin-top: 35px;
+  }
+  
+  .rs_icon {
+    margin-top: -25px;
+  }
+  
+  .icon-git {
+    fill: black;
+    margin-left: 25px;
+  }
+  
+  .scrollup {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: #373a36;
+    /* Set a background color */
+    color: #e6e2dd;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    border-radius: 50%;
+    /* Rounded corners */
+    line-height: 48px;
+    width: 48px;
+    font-size: 30px;
+    /* Increase font size */
+    text-align: center;
+    opacity: 0.5;
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    bottom: 40px;
+    /* Place the button at the bottom of the page */
+    right: 40px;
+    /* Place the button 30px from the right */
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .scrollup {
+      bottom: 100px;
+      /* Place the button at the bottom of the page */
+      right: 100px;
+      /* Place the button 30px from the right */
+    }
+  }
+  
+  @media screen and (min-width: 1920px) {
+    .scrollup {
+      bottom: 100px;
+      right: 400px;
+    }
+  }
+  
+  .scrollup:hover,
+  .scrollup:focus {
+    transform: scale(1.25);
+  }
