@@ -40,7 +40,6 @@ body {
     line-height: 1.5;
     padding: 40px 20px;
     font-family: "Raleway", sans-serif;
-    /* background-color: #e5e5dc; */
   }
   
   /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -77,20 +76,15 @@ body {
     font: inherit;
   }
   
-  /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
+  
+  html {
+    scroll-behavior: smooth;
   }
   
   .container {
     width: 420px;
     margin: 0 auto;
-    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 10px 2px #223c5033;
     border-radius: 20px;
   }
   
@@ -161,7 +155,7 @@ body {
       height: 629px;
       background-color: #66c0d4;
       padding: 48px 40px;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      box-shadow: 0px 4px 4px #00000026;
       border-radius: 20px 20px 0 0;
     }
     .nav_container.is-open {
@@ -180,7 +174,7 @@ body {
       height: 629px;
       background-color: #66c0d4;
       padding-top: 80px;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      box-shadow: 0px 4px 4px #00000026;
       border-radius: 0 20px 0 0;
     }
     .nav_container.is-open {
@@ -569,7 +563,7 @@ body {
     overflow-x: auto;
     padding: 0 10px 0 10px;
     background: #373a36;
-    color: white;
+    color: #ffffff;
   }
   
   @media screen and (min-width: 768px) {
@@ -583,7 +577,7 @@ body {
     .hljs {
       width: 604px;
       background: #ffffff;
-      color: black;
+      color: #000000;
     }
   }
   
@@ -633,7 +627,7 @@ body {
   .hljs-quote,
   .hljs-built_in,
   .hljs-builtin-name {
-    color: #ffa;
+    color: #ffffaa;
   }
   
   @media screen and (min-width: 1024px) {
@@ -665,7 +659,7 @@ body {
   .hljs-comment,
   .hljs-deletion,
   .hljs-code {
-    color: #888;
+    color: #888888;
   }
   
   .hljs-regexp,
@@ -679,12 +673,12 @@ body {
   
   .hljs-deletion {
     background-color: #fc9b9b;
-    color: #333;
+    color: #333333;
   }
   
   .hljs-addition {
     background-color: #a2fca2;
-    color: #333;
+    color: #333333;
   }
   
   .hljs a {
@@ -716,10 +710,10 @@ body {
   @media screen and (min-width: 1024px) {
     .code-container {
       position: absolute;
-      top: 980px;
+      top: 1040px;
       left: 420px;
       width: 604px;
-      background-color: white;
+      background-color: #ffffff;
       color: #000000;
     }
   }
@@ -727,7 +721,7 @@ body {
   @media screen and (min-width: 1920px) {
     .code-container {
       position: absolute;
-      top: 980px;
+      top: 1000px;
       left: 420px;
       width: 780px;
     }
@@ -771,10 +765,10 @@ body {
     .projects {
       margin-top: -88px;
       position: absolute;
-      top: 629px;
+      top: 570px;
       left: 420px;
       width: 604px;
-      background-color: white;
+      background-color: #ffffff;
       color: #000000;
     }
   }
@@ -931,7 +925,7 @@ body {
       top: 1505px;
       left: 420px;
       width: 604px;
-      background-color: white;
+      background-color: #ffffff;
     }
   }
   
@@ -1062,7 +1056,7 @@ body {
   }
   
   .icon-git {
-    fill: black;
+    fill: #000000;
     margin-left: 25px;
   }
   
