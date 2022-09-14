@@ -557,140 +557,6 @@ body {
     margin-left: 30px;
   }
   
-  .hljs {
-    width: 420px;
-    display: block;
-    overflow-x: auto;
-    padding: 0 10px 0 10px;
-    background: #373a36;
-    color: #ffffff;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .hljs {
-      width: 768px;
-      padding-left: 40px;
-    }
-  }
-  
-  @media screen and (min-width: 1024px) {
-    .hljs {
-      width: 604px;
-      background: #ffffff;
-      color: #000000;
-    }
-  }
-  
-  @media screen and (min-width: 1920px) {
-    .hljs {
-      width: 780px;
-    }
-  }
-  
-  .hljs-name,
-  .hljs-strong {
-    font-weight: bold;
-  }
-  
-  .hljs-code,
-  .hljs-emphasis {
-    font-style: italic;
-  }
-  
-  .hljs-tag {
-    color: #62c8f3;
-  }
-  
-  .hljs-variable,
-  .hljs-template-variable,
-  .hljs-selector-id,
-  .hljs-selector-class {
-    color: #ade5fc;
-  }
-  
-  .hljs-string,
-  .hljs-bullet {
-    color: #a2fca2;
-  }
-  
-  @media screen and (min-width: 1024px) {
-    .hljs-string,
-    .hljs-bullet {
-      color: #25c6c6;
-    }
-  }
-  
-  .hljs-type,
-  .hljs-title,
-  .hljs-section,
-  .hljs-attribute,
-  .hljs-quote,
-  .hljs-built_in,
-  .hljs-builtin-name {
-    color: #ffffaa;
-  }
-  
-  @media screen and (min-width: 1024px) {
-    .hljs-type,
-    .hljs-title,
-    .hljs-section,
-    .hljs-attribute,
-    .hljs-quote,
-    .hljs-built_in,
-    .hljs-builtin-name {
-      color: #4286f4;
-      font-weight: bold;
-    }
-  }
-  
-  .hljs-number,
-  .hljs-symbol,
-  .hljs-bullet {
-    color: #d36363;
-  }
-  
-  .hljs-keyword,
-  .hljs-selector-tag,
-  .hljs-literal {
-    color: #fcc28c;
-    font-weight: bold;
-  }
-  
-  .hljs-comment,
-  .hljs-deletion,
-  .hljs-code {
-    color: #888888;
-  }
-  
-  .hljs-regexp,
-  .hljs-link {
-    color: #c6b4f0;
-  }
-  
-  .hljs-meta {
-    color: #fc9b9b;
-  }
-  
-  .hljs-deletion {
-    background-color: #fc9b9b;
-    color: #333333;
-  }
-  
-  .hljs-addition {
-    background-color: #a2fca2;
-    color: #333333;
-  }
-  
-  .hljs a {
-    color: inherit;
-  }
-  
-  .hljs a:focus,
-  .hljs a:hover {
-    color: inherit;
-    text-decoration: underline;
-  }
-  
   pre {
     height: 456px;
   }
@@ -996,37 +862,16 @@ body {
   }
   
   .languages_level1,
-  .languages_level3,
-  .languages_level4 {
-    margin-left: 35px;
+  .languages_level3 {
+    margin-left: 75px;
   }
   
   .languages_level2 {
-    margin-left: 17px;
+    margin-left: 54px;
   }
-  
-  .english-level_certificate {
-    margin-left: 26px;
-  }
-  
-  @media screen and (max-width: 767px) {
-    .english-level_certificate {
-      margin-top: -7px;
-    }
-  }
-  
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .english-level_certificate {
-      margin-top: 15px;
-      margin-left: 90px;
-    }
-  }
-  
-  @media screen and (min-width: 1024px) {
-    .english-level_certificate {
-      margin-top: 5px;
-      margin-left: 80px;
-    }
+
+  .languages_level4 {
+    margin-left: 40px;
   }
   
   .footer {
@@ -1051,66 +896,8 @@ body {
     margin-top: 35px;
   }
   
-  .rs_icon {
-    margin-top: -25px;
-  }
-  
   .icon-git {
     fill: #000000;
     margin-left: 25px;
   }
   
-  .scrollup {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Fixed/sticky position */
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    background-color: #373a36;
-    /* Set a background color */
-    color: #e6e2dd;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    border-radius: 50%;
-    /* Rounded corners */
-    line-height: 48px;
-    width: 48px;
-    font-size: 30px;
-    /* Increase font size */
-    text-align: center;
-    opacity: 0.5;
-    transition-property: transform;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    bottom: 40px;
-    /* Place the button at the bottom of the page */
-    right: 40px;
-    /* Place the button 30px from the right */
-  }
-  
-  @media screen and (min-width: 1024px) {
-    .scrollup {
-      bottom: 100px;
-      /* Place the button at the bottom of the page */
-      right: 100px;
-      /* Place the button 30px from the right */
-    }
-  }
-  
-  @media screen and (min-width: 1920px) {
-    .scrollup {
-      bottom: 100px;
-      right: 400px;
-    }
-  }
-  
-  .scrollup:hover,
-  .scrollup:focus {
-    transform: scale(1.25);
-  }
